@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Solara</title>
+<title>Solara — Energia Solar Residencial</title>
 <meta name="description" content="Esqueça o mercado de energia, o clima e as estações. Nosso Controlador Inteligente garante que você fique sete anos sem conta de luz.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,11 @@
   --ink:color-mix(in srgb,#14202f calc((1 - var(--k))*100%),#fff);
   --nav:color-mix(in srgb,#1b2736 calc((1 - var(--k))*100%),#eef1f6);
   --soft:color-mix(in srgb,#1b2736 calc((1 - var(--k))*100%),#dfe5ee);
+  --paper:#f7f6f0;--ink2:#14202f;--mut:#5c6771;--lime:#6d8f2a;--lime2:#d8ee8e;--line:#e5e3d8;--navy:#0b1426;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;background:#0b1426}
-body{font-family:"Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+html{background:#0b1426;scroll-behavior:smooth}
+body{font-family:"Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;background:var(--paper);color:var(--ink2)}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero{position:relative;height:100svh;min-height:520px;overflow:hidden;isolation:isolate;background:#0b1426}
@@ -73,6 +74,92 @@ h1 .y{display:inline}
   .cap{font-size:14px;max-width:360px}
   .cap br{display:none}
 }
+/* ---------- página de vendas ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.sec{padding:96px 0}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--lime)}
+.h2{font-size:clamp(30px,4.4vw,46px);line-height:1.12;font-weight:600;letter-spacing:-.02em;margin:14px 0 16px}
+.lead{color:var(--mut);font-size:18px;line-height:1.55;max-width:660px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.strip{background:var(--navy);color:#dfe5ee}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:14px 44px;justify-content:space-between;padding-top:30px;padding-bottom:30px}
+.strip b{font-size:19px;font-weight:600;color:#fff;display:block}
+.strip span{font-size:14px;color:#9fb0a5;color:#a7b3a0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 26px}
+.step .n{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--lime2);color:#31420f;font-weight:600;font-size:18px;margin-bottom:18px}
+.step h3{font-size:19px;font-weight:600;margin-bottom:8px}
+.step p{color:var(--mut);font-size:15.5px;line-height:1.55}
+.banner{position:relative;height:54vh;min-height:360px;overflow:hidden}
+.banner img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;display:block}
+.banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,20,38,.72),rgba(11,20,38,.05) 65%)}
+.banner .cap2{position:absolute;left:0;right:0;bottom:44px;z-index:2;color:#fff}
+.banner .cap2 p{font-size:clamp(26px,3.6vw,42px);font-weight:600;line-height:1.2;letter-spacing:-.02em;max-width:640px}
+.kits{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;align-items:stretch}
+.kit{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px 30px;display:flex;flex-direction:column;position:relative}
+.kit.hot{background:var(--navy);color:#eef1f6;border-color:var(--navy)}
+.kit .tag{position:absolute;top:-14px;left:30px;background:linear-gradient(160deg,#f7f8dc,#e2ee9f);color:#1c2316;font-size:12.5px;font-weight:600;letter-spacing:.08em;padding:6px 14px;border-radius:99px}
+.kit h3{font-size:15px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
+.kit.hot h3{color:var(--lime2)}
+.kit .kw{font-size:30px;font-weight:600;margin:10px 0 2px;letter-spacing:-.02em}
+.kit .gen{color:var(--mut);font-size:15px}
+.kit.hot .gen{color:#a7b3a0}
+.kit .price{font-size:38px;font-weight:600;letter-spacing:-.02em;margin:22px 0 4px}
+.kit .per{color:var(--mut);font-size:14.5px}
+.kit.hot .per{color:#a7b3a0}
+.kit ul{list-style:none;margin:22px 0 28px;display:grid;gap:10px;font-size:15.5px}
+.kit li:before{content:"✓";color:var(--lime);font-weight:600;margin-right:10px}
+.kit.hot li:before{color:var(--lime2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 26px;border-radius:99px;background:#14202f;color:#fff;font-weight:500;font-size:16px;transition:transform .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn.lime{background:linear-gradient(160deg,#f7f8dc,#d8ee8e);color:#1c2316}
+.kit .btn{margin-top:auto}
+.kitnote{color:var(--mut);font-size:14.5px;margin-top:22px;text-align:center}
+.sim{background:var(--navy);color:#eef1f6;border-radius:28px;padding:52px 48px}
+.simgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.sim .kicker{color:var(--lime2)}
+.sim input[type=range]{width:100%;accent-color:var(--lime2);height:36px;margin:10px 0 4px}
+.sim .bill{font-size:44px;font-weight:600;letter-spacing:-.02em}
+.outs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.out{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:20px}
+.out span{font-size:13.5px;color:#a7b3a0;display:block;margin-bottom:6px}
+.out b{font-size:24px;font-weight:600;letter-spacing:-.01em}
+.simnote{grid-column:1/-1;color:#8fa098;font-size:13.5px;line-height:1.5}
+.bens{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.ben{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 26px}
+.ben svg{width:32px;height:32px;stroke:var(--lime);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px}
+.ben h3{font-size:18.5px;font-weight:600;margin-bottom:8px}
+.ben p{color:var(--mut);font-size:15.5px;line-height:1.55}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:12px}
+.faq summary{font-weight:600;font-size:16.5px;cursor:pointer}
+.faq details p{color:var(--mut);line-height:1.6;margin-top:10px;font-size:15.5px}
+.dark{background:var(--navy);color:#eef1f6}
+.dark .lead{color:#a7b3a0}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:780px;margin-top:36px}
+.form label{font-size:14px;color:#a7b3a0;display:grid;gap:8px}
+.form input,.form select{padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;font:inherit;font-size:16px}
+.form select option{color:#14202f}
+.form .full{grid-column:1/-1}
+.okbox{display:none;max-width:780px;margin-top:36px;background:rgba(216,238,142,.1);border:1px solid rgba(216,238,142,.45);border-radius:16px;padding:24px 26px;line-height:1.6}
+footer{background:#070d1a;color:#93a1af;padding:60px 0 42px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start}
+footer .flogo{display:flex;align-items:center;gap:9px;color:#fff;font-size:21px;font-weight:500}
+footer nav{display:flex;gap:26px;font-size:15px;flex-wrap:wrap}
+footer .disc{width:100%;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;font-size:13px;line-height:1.6;color:#71808e}
+@media (max-width:960px){
+  .steps{grid-template-columns:1fr 1fr}
+  .kits,.bens{grid-template-columns:1fr}
+  .kit.hot{transform:none}
+  .simgrid{grid-template-columns:1fr}
+  .sim{padding:38px 26px}
+  .sec{padding:68px 0}
+}
+@media (max-width:560px){
+  .steps{grid-template-columns:1fr}
+  .form{grid-template-columns:1fr}
+  .outs{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
@@ -100,9 +187,9 @@ h1 .y{display:inline}
         Solara
       </a>
       <ul class="links">
-        <li><a href="#">Como Funciona</a></li><li><a href="#">Nossos Cases</a></li><li><a href="#">Quem Somos</a></li><li><a href="#">Carreiras</a></li><li><a href="#">Recursos</a></li>
+        <li><a href="#como-funciona">Como Funciona</a></li><li><a href="#kits">Kits e Preços</a></li><li><a href="#simulador">Simulador</a></li><li><a href="#vantagens">Vantagens</a></li><li><a href="#faq">Dúvidas Frequentes</a></li>
       </ul>
-      <div class="side"><a href="#">Clientes</a><a class="cta" href="#">Peça seu Orçamento</a></div>
+      <div class="side"><a href="#orcamento">Clientes</a><a class="cta" href="#orcamento">Peça seu Orçamento</a></div>
     </header>
     <h1><span class="l1">R$ 0 na Conta de Luz</span><span><i>pelos próximos</i> <span class="y">7 Anos</span></span></h1>
     <div class="dock">
@@ -114,6 +201,162 @@ h1 .y{display:inline}
     </div>
   </div>
 </main>
+
+<div class="strip">
+  <div class="wrap">
+    <div><b>Até 95% menor</b><span>sua conta de luz com a compensação de energia</span></div>
+    <div><b>25 anos</b><span>de garantia de performance dos painéis</span></div>
+    <div><b>3 a 5 anos</b><span>é o retorno típico do investimento</span></div>
+    <div><b>Tudo incluso</b><span>projeto, instalação e homologação</span></div>
+  </div>
+</div>
+
+<section class="sec" id="como-funciona">
+  <div class="wrap">
+    <p class="kicker reveal">Como funciona</p>
+    <h2 class="h2 reveal">Do telhado à economia,<br>em quatro passos</h2>
+    <p class="lead reveal">Você aprova o projeto e a gente cuida do resto: papelada, instalação e a ligação com a concessionária. Sem obra, sem sujeira e sem você perder um dia de trabalho.</p>
+    <div class="steps">
+      <div class="step reveal"><span class="n">1</span><h3>Análise e projeto</h3><p>Estudamos sua conta de luz e o seu telhado e montamos o projeto sob medida, com a simulação da sua economia antes de você fechar qualquer coisa.</p></div>
+      <div class="step reveal"><span class="n">2</span><h3>Homologação</h3><p>Cuidamos de toda a papelada com a concessionária de energia. Você não perde tempo com formulário, protocolo nem fila.</p></div>
+      <div class="step reveal"><span class="n">3</span><h3>Instalação</h3><p>Nossa equipe instala painéis, inversor e estrutura em 1 a 3 dias, sem quebra-quebra — e deixa a casa limpa no final.</p></div>
+      <div class="step reveal"><span class="n">4</span><h3>Economia ligada</h3><p>Sistema conectado e monitoramento no seu celular pelo Controlador Inteligente Solara. A partir daí, sua conta despenca todo mês.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="banner">
+  <img alt="Casa com painéis solares pela manhã" src="https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261102_040259_1be34093-835e-4de4-b3a8-f875e6a74591.png&amp;w=2560&amp;q=85">
+  <div class="cap2 wrap"><p>De dia, seu telhado trabalha por você. À noite, você dorme com a conta zerada.</p></div>
+</div>
+
+<section class="sec" id="kits">
+  <div class="wrap">
+    <p class="kicker reveal">Kits e preços</p>
+    <h2 class="h2 reveal">Escolha pelo tamanho<br>da sua conta</h2>
+    <p class="lead reveal">Todos os kits incluem painéis, inversor com wi-fi, estrutura de fixação, instalação completa, projeto, homologação e o app de monitoramento. Preço fechado, sem surpresa depois.</p>
+    <div class="kits">
+      <article class="kit reveal">
+        <h3>Essencial</h3>
+        <p class="kw">3,30 kWp</p>
+        <p class="gen">6 painéis de 550 W · gera ±400 kWh/mês<br>Ideal para contas de R$ 300 a R$ 450</p>
+        <p class="price">R$ 11.990</p>
+        <p class="per">à vista · economia estimada de até R$ 380/mês</p>
+        <ul><li>Painéis com 25 anos de garantia de performance</li><li>Inversor com monitoramento wi-fi</li><li>Instalação e homologação inclusas</li><li>App Controlador Inteligente</li></ul>
+        <a class="btn" href="#orcamento">Quero este kit</a>
+      </article>
+      <article class="kit hot reveal">
+        <span class="tag">MAIS PROCURADO</span>
+        <h3>Família</h3>
+        <p class="kw">5,50 kWp</p>
+        <p class="gen">10 painéis de 550 W · gera ±680 kWh/mês<br>Ideal para contas de R$ 550 a R$ 750</p>
+        <p class="price">R$ 18.490</p>
+        <p class="per">à vista · economia estimada de até R$ 640/mês</p>
+        <ul><li>Tudo do Essencial, e mais:</li><li>Ar-condicionado e home office sem culpa</li><li>Estrutura reforçada premium</li><li>Prioridade na agenda de instalação</li></ul>
+        <a class="btn lime" href="#orcamento">Quero este kit</a>
+      </article>
+      <article class="kit reveal">
+        <h3>Premium</h3>
+        <p class="kw">8,25 kWp</p>
+        <p class="gen">15 painéis de 550 W · gera ±1.020 kWh/mês<br>Ideal para contas de R$ 800 a R$ 1.100</p>
+        <p class="price">R$ 26.990</p>
+        <p class="per">à vista · economia estimada de até R$ 960/mês</p>
+        <ul><li>Tudo do Família, e mais:</li><li>Folga para carro elétrico e piscina</li><li>Créditos de energia para o ano todo</li><li>Revisão anual inclusa por 3 anos</li></ul>
+        <a class="btn" href="#orcamento">Quero este kit</a>
+      </article>
+    </div>
+    <p class="kitnote">Valores para instalação padrão em telhado residencial. Financiamento em até 60x pelas linhas de energia solar dos bancos parceiros — na simulação gratuita a gente mostra a parcela pro seu caso.</p>
+  </div>
+</section>
+
+<section class="sec" id="simulador" style="padding-top:0">
+  <div class="wrap">
+    <div class="sim reveal">
+      <div class="simgrid">
+        <div>
+          <p class="kicker">Simulador</p>
+          <h2 class="h2" style="color:#fff">Quanto você economizaria?</h2>
+          <p style="color:#a7b3a0;line-height:1.55">Arraste até o valor da sua conta de luz atual e veja o sistema indicado pro seu consumo.</p>
+          <p style="margin-top:30px;color:#a7b3a0;font-size:14.5px">Sua conta mensal</p>
+          <p class="bill" id="billVal">R$ 450</p>
+          <input type="range" id="bill" min="150" max="3000" step="10" value="450" aria-label="Valor da conta de luz mensal">
+          <p style="color:#8fa098;font-size:13.5px">De R$ 150 a R$ 3.000 por mês</p>
+        </div>
+        <div class="outs">
+          <div class="out"><span>Geração indicada</span><b id="oGen">—</b></div>
+          <div class="out"><span>Potência do sistema</span><b id="oKwp">—</b></div>
+          <div class="out"><span>Painéis de 550 W</span><b id="oPan">—</b></div>
+          <div class="out"><span>Investimento estimado</span><b id="oInv">—</b></div>
+          <div class="out" style="grid-column:1/-1"><span>Economia estimada em 25 anos</span><b id="oEco" style="color:var(--lime2)">—</b></div>
+          <p class="simnote">Estimativa com tarifa média de R$ 0,95/kWh e geração média de 125 kWh por kWp/mês, sem contar os reajustes anuais da tarifa (que só aumentam a economia). O número exato sai na análise gratuita do seu telhado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="vantagens" style="padding-top:0">
+  <div class="wrap">
+    <p class="kicker reveal">Vantagens</p>
+    <h2 class="h2 reveal">Por que quem instala<br>não volta atrás</h2>
+    <div class="bens">
+      <div class="ben reveal"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><h3>Conta até 95% menor</h3><p>Com a compensação de energia, o que você gera abate o que consome. Sobra só a taxa mínima e os encargos que a lei não deixa zerar.</p></div>
+      <div class="ben reveal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><h3>Retorno em 3 a 5 anos</h3><p>O sistema se paga com a própria economia e continua gerando por mais de 25 anos. É investimento, não gasto.</p></div>
+      <div class="ben reveal"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><h3>Imóvel valorizado</h3><p>Casa com energia solar vale mais e vende mais rápido: o sistema fica no imóvel e a conta baixa vai junto pro próximo dono.</p></div>
+      <div class="ben reveal"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 7.6-8 9-4.8-1.4-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><h3>Garantia de verdade</h3><p>25 anos de garantia de performance dos painéis e 12 anos dos equipamentos, tudo registrado em contrato.</p></div>
+      <div class="ben reveal"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><h3>Controle no celular</h3><p>Acompanhe geração e consumo em tempo real no app do Controlador Inteligente — de onde você estiver.</p></div>
+      <div class="ben reveal"><svg viewBox="0 0 24 24"><path d="M12 21c-5 0-8-3-8-8 0-5 4-9 8-11 4 2 8 6 8 11 0 5-3 8-8 8z"/><path d="M12 21v-8"/></svg><h3>Bem pro planeta</h3><p>Ao longo da vida útil, uma casa com solar evita toneladas de CO₂. Economia no bolso que também é atitude.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <p class="kicker reveal">Dúvidas frequentes</p>
+    <h2 class="h2 reveal">Perguntas de quem<br>está pensando</h2>
+    <div style="margin-top:40px;max-width:840px">
+      <details class="reveal"><summary>E quando está nublado ou chovendo?</summary><p>O sistema gera menos, mas continua gerando. E como ele é ligado à rede, o que faltar vem da concessionária — e o excedente dos dias de sol vira crédito para abater esses momentos.</p></details>
+      <details class="reveal"><summary>O que é essa compensação de energia?</summary><p>A energia que seus painéis geram a mais durante o dia é injetada na rede e vira crédito na sua conta. À noite e nos dias fracos, você usa esses créditos. Eles valem por 60 meses — dá pra atravessar o inverno com o sol do verão.</p></details>
+      <details class="reveal"><summary>Meu telhado aguenta os painéis?</summary><p>É a primeira coisa que a visita técnica avalia, junto com sombreamento e orientação — antes de qualquer compromisso. A estrutura é leve, de alumínio, feita para o seu tipo de telha.</p></details>
+      <details class="reveal"><summary>Precisa de muita manutenção?</summary><p>Quase nenhuma: a chuva lava os painéis na maior parte do ano e uma revisão anual confere conexões e o inversor. O app avisa se alguma coisa sair do normal.</p></details>
+      <details class="reveal"><summary>Posso financiar?</summary><p>Pode. Existem linhas de crédito específicas para energia solar, em até 60x, e em muitos casos a parcela fica próxima do valor que você já paga hoje de conta de luz — trocando um gasto eterno por um patrimônio seu.</p></details>
+      <details class="reveal"><summary>E se eu vender ou me mudar de casa?</summary><p>O sistema fica no imóvel e entra na negociação como valorização — quem compra herda a conta baixa. É um dos motivos de casas com solar venderem mais rápido.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark" id="orcamento">
+  <div class="wrap">
+    <p class="kicker reveal" style="color:var(--lime2)">Orçamento gratuito</p>
+    <h2 class="h2 reveal" style="color:#fff">Receba a simulação<br>do seu telhado</h2>
+    <p class="lead reveal">Resposta em até 1 dia útil, com o projeto e a economia estimados para a sua casa. Sem compromisso, sem taxa de visita na nossa área de atendimento.</p>
+    <form class="form" id="qform">
+      <label>Seu nome<input required name="nome" type="text" placeholder="Como podemos te chamar?" autocomplete="name"></label>
+      <label>WhatsApp<input required name="zap" type="tel" placeholder="(00) 00000-0000" autocomplete="tel"></label>
+      <label>Cidade<input required name="cidade" type="text" placeholder="Sua cidade"></label>
+      <label>Valor médio da sua conta
+        <select name="conta">
+          <option>Até R$ 300</option><option selected>De R$ 300 a R$ 600</option><option>De R$ 600 a R$ 900</option><option>Acima de R$ 900</option>
+        </select>
+      </label>
+      <button class="btn lime full" type="submit" style="height:54px;font-size:17px">Quero minha simulação gratuita</button>
+    </form>
+    <div class="okbox" id="qok"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="flogo"><svg viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><g fill="#d8ee8e"><path d="M18.3 3.5h3.4l.9 8.4h-5.2Z"/><path d="M18.3 3.5h3.4l.9 8.4h-5.2Z" transform="rotate(45 20 20)"/><path d="M18.3 3.5h3.4l.9 8.4h-5.2Z" transform="rotate(90 20 20)"/><path d="M18.3 3.5h3.4l.9 8.4h-5.2Z" transform="rotate(135 20 20)"/><path d="M18.3 3.5h3.4l.9 8.4h-5.2Z" transform="rotate(180 20 20)"/><path d="M18.3 3.5h3.4l.9 8.4h-5.2Z" transform="rotate(225 20 20)"/><path d="M18.3 3.5h3.4l.9 8.4h-5.2Z" transform="rotate(270 20 20)"/><path d="M18.3 3.5h3.4l.9 8.4h-5.2Z" transform="rotate(315 20 20)"/></g></svg>Solara</p>
+      <p style="margin-top:14px;max-width:340px;line-height:1.6;font-size:14.5px">Energia solar residencial com projeto, instalação e homologação — e a conta de luz zerada por sete anos.</p>
+    </div>
+    <nav>
+      <a href="#como-funciona">Como Funciona</a><a href="#kits">Kits e Preços</a><a href="#simulador">Simulador</a><a href="#vantagens">Vantagens</a><a href="#faq">Dúvidas</a><a href="#orcamento">Orçamento</a>
+    </nav>
+    <p class="disc">© 2026 Solara Energia Solar. Site demonstrativo: a Solara é uma empresa fictícia e os preços, prazos e condições exibidos são ilustrativos, criados para demonstração de design. Criado por Criaê | Presença Digital.</p>
+  </div>
+</footer>
 <script>
 const root=document.documentElement.style,$=id=>document.getElementById(id);
 const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -204,6 +447,43 @@ function frame(now){
 }
 function loop(t){frame(t);requestAnimationFrame(loop)}
 requestAnimationFrame(loop);
+</script>
+<script>
+/* ---------- simulador ---------- */
+const brl=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+const bill=$('bill');
+function sim(){
+  const conta=+bill.value;
+  $('billVal').textContent=brl(conta);
+  const consumo=conta/0.95;                 // kWh/mês estimados
+  const kwp=consumo/125;                    // kWp necessários
+  const paineis=Math.max(2,Math.ceil(kwp*1000/550));
+  const kwpReal=paineis*550/1000;
+  const geracao=Math.round(kwpReal*125);
+  const investimento=Math.round(kwpReal*3900/10)*10;
+  const ecoMes=conta*0.92;
+  $('oGen').textContent=geracao.toLocaleString('pt-BR')+' kWh/mês';
+  $('oKwp').textContent=kwpReal.toFixed(2).replace('.',',')+' kWp';
+  $('oPan').textContent=paineis+' painéis';
+  $('oInv').textContent=brl(investimento);
+  $('oEco').textContent=brl(Math.round(ecoMes*12*25));
+}
+bill.addEventListener('input',sim);sim();
+
+/* ---------- formulário (demonstração) ---------- */
+$('qform').addEventListener('submit',e=>{
+  e.preventDefault();
+  const nome=e.target.nome.value.trim().split(' ')[0]||'tudo certo';
+  const ok=$('qok');
+  ok.innerHTML='<b>Recebido, '+nome+'!</b><br>Em um site real, este pedido chegaria agora no WhatsApp da empresa. Aqui é só a demonstração do formulário — nenhum dado foi enviado.';
+  ok.style.display='block';
+  e.target.style.display='none';
+  ok.scrollIntoView({behavior:'smooth',block:'center'});
+});
+
+/* ---------- reveal on scroll ---------- */
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
