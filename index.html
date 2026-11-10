@@ -116,6 +116,18 @@ h1 .y{display:inline}
 .btn.lime{background:linear-gradient(160deg,#f7f8dc,#d8ee8e);color:#1c2316}
 .kit .btn{margin-top:auto}
 .kitnote{color:var(--mut);font-size:14.5px;margin-top:22px;text-align:center}
+.panels{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;align-items:stretch}
+.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px 30px;display:flex;flex-direction:column;position:relative}
+.panel .tag{position:absolute;top:-14px;left:30px;background:linear-gradient(160deg,#f7f8dc,#e2ee9f);color:#1c2316;font-size:12.5px;font-weight:600;letter-spacing:.08em;padding:6px 14px;border-radius:99px}
+.panel svg{width:44px;height:44px;stroke:var(--lime);fill:none;stroke-width:1.6;margin-bottom:18px}
+.panel h3{font-size:21px;font-weight:600;letter-spacing:-.01em}
+.panel .sub{color:var(--mut);font-size:15px;margin-top:4px}
+.panel .price{font-size:34px;font-weight:600;letter-spacing:-.02em;margin:20px 0 2px}
+.panel .per{color:var(--mut);font-size:14.5px}
+.panel .specs{list-style:none;margin:20px 0 26px;display:grid;gap:9px;font-size:15px;border-top:1px solid var(--line);padding-top:20px}
+.panel .specs li{display:flex;justify-content:space-between;gap:14px}
+.panel .specs span{color:var(--mut)}
+.panel .btn{margin-top:auto}
 .sim{background:var(--navy);color:#eef1f6;border-radius:28px;padding:52px 48px}
 .simgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .sim .kicker{color:var(--lime2)}
@@ -149,7 +161,7 @@ footer nav{display:flex;gap:26px;font-size:15px;flex-wrap:wrap}
 footer .disc{width:100%;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;font-size:13px;line-height:1.6;color:#71808e}
 @media (max-width:960px){
   .steps{grid-template-columns:1fr 1fr}
-  .kits,.bens{grid-template-columns:1fr}
+  .kits,.bens,.panels{grid-template-columns:1fr}
   .kit.hot{transform:none}
   .simgrid{grid-template-columns:1fr}
   .sim{padding:38px 26px}
@@ -187,7 +199,7 @@ footer .disc{width:100%;border-top:1px solid rgba(255,255,255,.1);padding-top:22
         Solara
       </a>
       <ul class="links">
-        <li><a href="#como-funciona">Como Funciona</a></li><li><a href="#kits">Kits e Preços</a></li><li><a href="#simulador">Simulador</a></li><li><a href="#vantagens">Vantagens</a></li><li><a href="#faq">Dúvidas Frequentes</a></li>
+        <li><a href="#como-funciona">Como Funciona</a></li><li><a href="#kits">Kits e Preços</a></li><li><a href="#placas">Placas Solares</a></li><li><a href="#simulador">Simulador</a></li><li><a href="#vantagens">Vantagens</a></li><li><a href="#faq">Dúvidas Frequentes</a></li>
       </ul>
       <div class="side"><a href="#orcamento">Clientes</a><a class="cta" href="#orcamento">Peça seu Orçamento</a></div>
     </header>
@@ -266,6 +278,63 @@ footer .disc{width:100%;border-top:1px solid rgba(255,255,255,.1);padding-top:22
       </article>
     </div>
     <p class="kitnote">Valores para instalação padrão em telhado residencial. Financiamento em até 60x pelas linhas de energia solar dos bancos parceiros — na simulação gratuita a gente mostra a parcela pro seu caso.</p>
+  </div>
+</section>
+
+<section class="sec" id="placas" style="padding-top:0">
+  <div class="wrap">
+    <p class="kicker reveal">Placas solares</p>
+    <h2 class="h2 reveal">Prefere comprar<br>só as placas?</h2>
+    <p class="lead reveal">Vendemos as placas avulsas também — pra quem já tem instalador, quer ampliar um sistema que já existe ou vai montar por conta própria. Preço por unidade, com nota e garantia de fábrica.</p>
+    <div class="panels">
+      <article class="panel reveal">
+        <svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="26" rx="2"/><path d="M18 10v26M30 10v26M6 18.7h36M6 27.3h36M24 36v6M16 44h16"/></svg>
+        <h3>Painel 550W Monocristalino</h3>
+        <p class="sub">O queridinho das casas — é o painel dos nossos kits residenciais.</p>
+        <p class="price">R$ 649</p>
+        <p class="per">por unidade · à vista no Pix</p>
+        <ul class="specs">
+          <li><span>Potência</span><b>550 Wp</b></li>
+          <li><span>Eficiência</span><b>21,3%</b></li>
+          <li><span>Células</span><b>Half-cell mono</b></li>
+          <li><span>Medidas</span><b>2,28 m × 1,13 m</b></li>
+          <li><span>Garantia</span><b>12 anos + 25 de performance</b></li>
+        </ul>
+        <a class="btn" href="#orcamento">Pedir orçamento</a>
+      </article>
+      <article class="panel reveal">
+        <span class="tag">MAIOR GERAÇÃO</span>
+        <svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="26" rx="2"/><path d="M18 10v26M30 10v26M6 18.7h36M6 27.3h36M24 36v6M16 44h16"/></svg>
+        <h3>Painel 580W Bifacial</h3>
+        <p class="sub">Gera pela frente e pelo verso — rende mais em telhado claro e no solo.</p>
+        <p class="price">R$ 779</p>
+        <p class="per">por unidade · à vista no Pix</p>
+        <ul class="specs">
+          <li><span>Potência</span><b>580 Wp</b></li>
+          <li><span>Eficiência</span><b>22,5%</b></li>
+          <li><span>Células</span><b>Bifacial N-type</b></li>
+          <li><span>Medidas</span><b>2,28 m × 1,13 m</b></li>
+          <li><span>Garantia</span><b>15 anos + 30 de performance</b></li>
+        </ul>
+        <a class="btn" href="#orcamento">Pedir orçamento</a>
+      </article>
+      <article class="panel reveal">
+        <svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="26" rx="2"/><path d="M18 10v26M30 10v26M6 18.7h36M6 27.3h36M24 36v6M16 44h16"/></svg>
+        <h3>Painel 700W Comercial</h3>
+        <p class="sub">Potência máxima por placa — feito para galpões, comércios e fazendas solares.</p>
+        <p class="price">R$ 949</p>
+        <p class="per">por unidade · à vista no Pix</p>
+        <ul class="specs">
+          <li><span>Potência</span><b>700 Wp</b></li>
+          <li><span>Eficiência</span><b>22,8%</b></li>
+          <li><span>Células</span><b>Half-cell mono</b></li>
+          <li><span>Medidas</span><b>2,38 m × 1,30 m</b></li>
+          <li><span>Garantia</span><b>12 anos + 25 de performance</b></li>
+        </ul>
+        <a class="btn" href="#orcamento">Pedir orçamento</a>
+      </article>
+    </div>
+    <p class="kitnote">Preço por unidade, sem instalação nem frete. A partir de 10 unidades, consulte a condição de atacado. E lembrando: no kit completo, instalação, projeto e homologação já estão inclusos.</p>
   </div>
 </section>
 
@@ -352,7 +421,7 @@ footer .disc{width:100%;border-top:1px solid rgba(255,255,255,.1);padding-top:22
       <p style="margin-top:14px;max-width:340px;line-height:1.6;font-size:14.5px">Energia solar residencial com projeto, instalação e homologação — e a conta de luz zerada por sete anos.</p>
     </div>
     <nav>
-      <a href="#como-funciona">Como Funciona</a><a href="#kits">Kits e Preços</a><a href="#simulador">Simulador</a><a href="#vantagens">Vantagens</a><a href="#faq">Dúvidas</a><a href="#orcamento">Orçamento</a>
+      <a href="#como-funciona">Como Funciona</a><a href="#kits">Kits e Preços</a><a href="#placas">Placas Solares</a><a href="#simulador">Simulador</a><a href="#vantagens">Vantagens</a><a href="#faq">Dúvidas</a><a href="#orcamento">Orçamento</a>
     </nav>
     <p class="disc">© 2026 Solara Energia Solar. Site demonstrativo: a Solara é uma empresa fictícia e os preços, prazos e condições exibidos são ilustrativos, criados para demonstração de design. Criado por Criaê | Presença Digital.</p>
   </div>
